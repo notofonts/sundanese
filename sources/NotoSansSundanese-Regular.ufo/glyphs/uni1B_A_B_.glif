@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1BAB" format="2">
+  <unicode hex="1BAB"/>
+  <outline>
+    <contour>
+      <point x="119" y="253" type="line"/>
+      <point x="150" y="253" type="line"/>
+      <point x="150" y="318" type="line"/>
+      <point x="215" y="318" type="line"/>
+      <point x="215" y="349" type="line"/>
+      <point x="150" y="349" type="line"/>
+      <point x="150" y="414" type="line"/>
+      <point x="119" y="414" type="line"/>
+      <point x="119" y="349" type="line"/>
+      <point x="54" y="349" type="line"/>
+      <point x="54" y="318" type="line"/>
+      <point x="119" y="318" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2020/06/22 18:49:42</string>
+    </dict>
+  </lib>
+</glyph>
