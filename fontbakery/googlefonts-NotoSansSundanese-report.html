@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+                <html lang="en">
+                    <head>
+                        <meta charset="utf-8">
+                        <title>Fontbakery Check Report</title>
+                        <style>
+                            
+            html {
+                font-family: sans-serif;
+            }
+
+            h2 {
+                margin-top: 2em;
+            }
+
+            h3 {
+                margin-bottom: 1px;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 0.5em
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            tr {
+                text-align: left;
+            }
+
+            ul {
+                margin-top: 0;
+            }
+
+            .details_item {
+                list-style: none;
+                display: flex;
+                align-items: baseline;
+            }
+
+            .details_indicator {
+                flex: 0 0 5em;
+                font-weight: bold;
+                padding-right: 0.5em;
+                text-align: right;
+            }
+
+            .details_text {
+                flex: 1 0;
+            }
+            
+                        </style>
+                    </head>
+                    <body>
+                    <h1>Fontbakery Technical Report</h1>
+<div>If you think a check is flawed or have an idea for a check, please  file an issue at <a href='https://github.com/googlefonts/fontbakery/issues'>https://github.com/googlefonts/fontbakery/issues</a> and remember to include a pointer to the repo and branch you're checking.</div>
+<h2>Summary</h2>
+            <table>
+            <tr>
+                <th>💥 ERROR</th>
+                <th>🔥 FAIL</th>
+                <th>⚠️ WARN</th>
+                <th>⏩ SKIP</th>
+                <th>ℹ️ INFO</th>
+                <th>✅ PASS</th>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>6</td>
+                <td>34</td>
+                <td>540</td>
+                <td>32</td>
+                <td>460</td>
+            </tr>
+            <tr>
+                <td>0%</td>
+                <td>1%</td>
+                <td>4%</td>
+                <td>66%</td>
+                <td>4%</td>
+                <td>56%</td>
+            </tr>
+            </table>
+            
+<p><strong>Note:</strong> The following loglevels were omitted in this report: SKIP, INFO, PASS, DEBUG</p>
+<h2>&lt;Section: Google Fonts&gt; 💥💥💥⚠️⚠️⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️</h2>
+<h3>Check font names are correct</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/font_names&gt;</div>
+
+<details><summary>💥 <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>💥 ERROR</span><span class='details_text'><p>The condition <a href="FontBakeryCondition:expected_font_names">FontBakeryCondition:expected_font_names</a> had an error: KeyError: 'fvar'</p>
+</span></li></ul></div></details>
+<h3>Check a font's STAT table contains compulsory Axis Values.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/STAT&gt;</div>
+
+<details><summary>💥 <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>💥 ERROR</span><span class='details_text'><p>The condition <a href="FontBakeryCondition:expected_font_names">FontBakeryCondition:expected_font_names</a> had an error: KeyError: 'fvar'</p>
+</span></li></ul></div></details>
+<h3>Check variable font instances</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fvar_instances&gt;</div>
+
+<details><summary>💥 <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>💥 ERROR</span><span class='details_text'><p>The condition <a href="FontBakeryCondition:expected_font_names">FontBakeryCondition:expected_font_names</a> had an error: KeyError: 'fvar'</p>
+</span></li></ul></div></details>
+<h3>Combined length of family and style must not exceed 27 characters.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/family_and_style_max_length&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The combined length of family and style exceeds 27 chars in the following 'WINDOWS' entries:
+FONT_FAMILY_NAME = 'Noto Sans Sundanese Medium' / SUBFAMILY_NAME = 'Regular'</p>
+<p>Please take a look at the conversation at https://github.com/googlefonts/fontbakery/issues/2179 in order to understand the reasoning behind these name table records max-length criteria. [code: too-long]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The combined length of family and style exceeds 27 chars in the following 'WINDOWS' entries:
+FONT_FAMILY_NAME = 'Noto Sans Sundanese SemiBold' / SUBFAMILY_NAME = 'Regular'</p>
+<p>Please take a look at the conversation at https://github.com/googlefonts/fontbakery/issues/2179 in order to understand the reasoning behind these name table records max-length criteria. [code: too-long]</p>
+</span></li></ul></div></details>
+<h3>Ensure fonts have ScriptLangTags declared on the 'meta' table.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/meta/script_lang_tags&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This font file does not have a 'meta' table. [code: lacks-meta-table]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This font file does not have a 'meta' table. [code: lacks-meta-table]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This font file does not have a 'meta' table. [code: lacks-meta-table]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This font file does not have a 'meta' table. [code: lacks-meta-table]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This font file does not have a 'meta' table. [code: lacks-meta-table]</p>
+</span></li></ul></div></details>
+<h2>&lt;Section: Universal&gt; 🔥🔥🔥🔥🔥🔥⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️</h2>
+<h3>Checking all files are in the same directory.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/single_directory&gt;</div>
+
+<details><summary>🔥 <strong>Family check</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>Not all fonts passed in the command line are in the same directory. This may lead to bad results as the tool will interpret all font files as belonging to a single font family. The detected directories are: ['fonts/NotoSansSundanese/googlefonts/ttf', 'fonts/NotoSansSundanese/googlefonts/variable-ttf'] [code: single-directory]</p>
+</span></li></ul></div></details>
+<h3>Checking OS/2 usWinAscent & usWinDescent.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/win_ascent_and_descent&gt;</div>
+
+<details><summary>🔥 <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 385, but got 368 instead. [code: descent]</p>
+</span></li></ul></div></details>
+<details><summary>🔥 <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 385, but got 368 instead. [code: descent]</p>
+</span></li></ul></div></details>
+<details><summary>🔥 <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 385, but got 368 instead. [code: descent]</p>
+</span></li></ul></div></details>
+<details><summary>🔥 <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 385, but got 368 instead. [code: descent]</p>
+</span></li></ul></div></details>
+<details><summary>🔥 <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>OS/2.usWinDescent value should be equal or greater than 385, but got 368 instead. [code: descent]</p>
+</span></li></ul></div></details>
+<h3>Check font contains no unreachable glyphs</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/unreachable_glyphs&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs could not be reached by codepoint or substitution rules:</p>
+<pre><code>- uni00A0.1
+</code></pre>
+<p>[code: unreachable-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs could not be reached by codepoint or substitution rules:</p>
+<pre><code>- uni00A0.1
+</code></pre>
+<p>[code: unreachable-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs could not be reached by codepoint or substitution rules:</p>
+<pre><code>- uni00A0.1
+</code></pre>
+<p>[code: unreachable-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs could not be reached by codepoint or substitution rules:</p>
+<pre><code>- uni00A0.1
+</code></pre>
+<p>[code: unreachable-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs could not be reached by codepoint or substitution rules:</p>
+<pre><code>- uni00A0.1
+</code></pre>
+<p>[code: unreachable-glyphs]</p>
+</span></li></ul></div></details>
+<h3>Check if each glyph has the recommended amount of contours.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/contour_count&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This check inspects the glyph outlines and detects the total number of contours in each of them. The expected values are infered from the typical ammounts of contours observed in a large collection of reference font families. The divergences listed below may simply indicate a significantly different design on some of your glyphs. On the other hand, some of these may flag actual bugs in the font such as glyphs mapped to an incorrect codepoint. Please consider reviewing the design and codepoint assignment of these to make sure they are correct.</p>
+<p>The following glyphs do not have the recommended number of contours:</p>
+<pre><code>- Glyph name: aogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: uogonek	Contours detected: 2	Expected: 1
+
+- Glyph name: aogonek	Contours detected: 3	Expected: 2 
+
+- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+</code></pre>
+<p>[code: contour-count]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This check inspects the glyph outlines and detects the total number of contours in each of them. The expected values are infered from the typical ammounts of contours observed in a large collection of reference font families. The divergences listed below may simply indicate a significantly different design on some of your glyphs. On the other hand, some of these may flag actual bugs in the font such as glyphs mapped to an incorrect codepoint. Please consider reviewing the design and codepoint assignment of these to make sure they are correct.</p>
+<p>The following glyphs do not have the recommended number of contours:</p>
+<pre><code>- Glyph name: aogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: uogonek	Contours detected: 2	Expected: 1
+
+- Glyph name: aogonek	Contours detected: 3	Expected: 2 
+
+- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+</code></pre>
+<p>[code: contour-count]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This check inspects the glyph outlines and detects the total number of contours in each of them. The expected values are infered from the typical ammounts of contours observed in a large collection of reference font families. The divergences listed below may simply indicate a significantly different design on some of your glyphs. On the other hand, some of these may flag actual bugs in the font such as glyphs mapped to an incorrect codepoint. Please consider reviewing the design and codepoint assignment of these to make sure they are correct.</p>
+<p>The following glyphs do not have the recommended number of contours:</p>
+<pre><code>- Glyph name: aogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: uogonek	Contours detected: 2	Expected: 1
+
+- Glyph name: aogonek	Contours detected: 3	Expected: 2 
+
+- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+</code></pre>
+<p>[code: contour-count]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This check inspects the glyph outlines and detects the total number of contours in each of them. The expected values are infered from the typical ammounts of contours observed in a large collection of reference font families. The divergences listed below may simply indicate a significantly different design on some of your glyphs. On the other hand, some of these may flag actual bugs in the font such as glyphs mapped to an incorrect codepoint. Please consider reviewing the design and codepoint assignment of these to make sure they are correct.</p>
+<p>The following glyphs do not have the recommended number of contours:</p>
+<pre><code>- Glyph name: aogonek	Contours detected: 3	Expected: 2
+
+- Glyph name: uogonek	Contours detected: 2	Expected: 1
+
+- Glyph name: aogonek	Contours detected: 3	Expected: 2 
+
+- And Glyph name: uogonek	Contours detected: 2	Expected: 1
+</code></pre>
+<p>[code: contour-count]</p>
+</span></li></ul></div></details>
+<h2>&lt;Section: fontbakery.profiles.gdef&gt; ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️</h2>
+<h3>Check glyphs in mark glyph class are non-spacing.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gdef_spacing_marks&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following spacing glyphs may be in the GDEF mark glyph class by mistake:
+uni1B82 (U+1B82) [code: spacing-mark-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following spacing glyphs may be in the GDEF mark glyph class by mistake:
+uni1B82 (U+1B82) [code: spacing-mark-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following spacing glyphs may be in the GDEF mark glyph class by mistake:
+uni1B82 (U+1B82) [code: spacing-mark-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following spacing glyphs may be in the GDEF mark glyph class by mistake:
+uni1B82 (U+1B82) [code: spacing-mark-glyphs]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following spacing glyphs may be in the GDEF mark glyph class by mistake:
+uni1B82 (U+1B82) [code: spacing-mark-glyphs]</p>
+</span></li></ul></div></details>
+<h3>Check GDEF mark glyph class doesn't have characters that are not marks.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gdef_non_mark_chars&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following non-mark characters should not be in the GDEF mark glyph class:
+U+1B82 [code: non-mark-chars]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following non-mark characters should not be in the GDEF mark glyph class:
+U+1B82 [code: non-mark-chars]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following non-mark characters should not be in the GDEF mark glyph class:
+U+1B82 [code: non-mark-chars]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following non-mark characters should not be in the GDEF mark glyph class:
+U+1B82 [code: non-mark-chars]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/variable-ttf/NotoSansSundanese[wght].ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following non-mark characters should not be in the GDEF mark glyph class:
+U+1B82 [code: non-mark-chars]</p>
+</span></li></ul></div></details>
+<h2>&lt;Section: Outline Correctness Checks&gt; ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩</h2>
+<h3>Are there any misaligned on-curve points?</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_alignment_miss&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have on-curve points which have potentially incorrect y coordinates:</p>
+<pre><code>* numbersign (U+0023): X=236.0,Y=713.0 (should be at cap-height 714?)
+
+* numbersign (U+0023): X=343.0,Y=713.0 (should be at cap-height 714?)
+
+* numbersign (U+0023): X=440.0,Y=713.0 (should be at cap-height 714?)
+
+* numbersign (U+0023): X=545.0,Y=713.0 (should be at cap-height 714?)
+
+* six (U+0036): X=489.0,Y=715.0 (should be at cap-height 714?)
+
+* C (U+0043): X=482.0,Y=-1.0 (should be at baseline 0?)
+
+* G (U+0047): X=527.5,Y=1.0 (should be at baseline 0?)
+
+* G (U+0047): X=543.0,Y=712.0 (should be at cap-height 714?)
+
+* c (U+0063): X=394.5,Y=-0.5 (should be at baseline 0?)
+
+* e (U+0065): X=432.5,Y=-0.5 (should be at baseline 0?) 
+
+* And 63 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have on-curve points which have potentially incorrect y coordinates:</p>
+<pre><code>* numbersign (U+0023): X=241.0,Y=713.0 (should be at cap-height 714?)
+
+* numbersign (U+0023): X=333.0,Y=713.0 (should be at cap-height 714?)
+
+* numbersign (U+0023): X=451.0,Y=713.0 (should be at cap-height 714?)
+
+* numbersign (U+0023): X=540.0,Y=713.0 (should be at cap-height 714?)
+
+* three (U+0033): X=135.5,Y=-1.0 (should be at baseline 0?)
+
+* four (U+0034): X=342.0,Y=716.0 (should be at cap-height 714?)
+
+* four (U+0034): X=460.0,Y=716.0 (should be at cap-height 714?)
+
+* six (U+0036): X=480.0,Y=715.0 (should be at cap-height 714?)
+
+* nine (U+0039): X=91.0,Y=-2.0 (should be at baseline 0?)
+
+* C (U+0043): X=486.0,Y=-2.0 (should be at baseline 0?) 
+
+* And 55 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-misalignments]</p>
+</span></li></ul></div></details>
+<h3>Are any segments inordinately short?</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_short_segments&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have segments which seem very short:</p>
+<pre><code>* two (U+0032) contains a short segment L&lt;&lt;228.0,134.0&gt;--&lt;228.0,127.0&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;636.0,296.0&gt;-&lt;635.0,286.0&gt;-&lt;635.0,275.5&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;635.0,275.5&gt;-&lt;635.0,265.0&gt;-&lt;635.0,262.0&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;646.5,207.5&gt;-&lt;658.0,194.0&gt;-&lt;672.0,194.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;220.0,560.0&gt;--&lt;216.0,560.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;465.0,168.0&gt;--&lt;468.0,168.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;220.0,540.0&gt;--&lt;216.0,540.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;591.0,179.0&gt;--&lt;594.0,179.0&gt;&gt;
+
+* Q (U+0051) contains a short segment L&lt;&lt;409.0,-10.0&gt;--&lt;398.0,-10.0&gt;&gt;
+
+* W (U+0057) contains a short segment B&lt;&lt;516.0,375.0&gt;-&lt;513.0,386.0&gt;-&lt;508.5,408.0&gt;&gt; 
+
+* And 64 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Medium.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have segments which seem very short:</p>
+<pre><code>* two (U+0032) contains a short segment L&lt;&lt;170.0,92.0&gt;--&lt;170.0,87.0&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;617.0,293.0&gt;-&lt;616.0,277.0&gt;-&lt;616.0,269.0&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;616.0,269.0&gt;-&lt;616.0,261.0&gt;-&lt;616.0,258.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;184.0,616.0&gt;--&lt;180.0,616.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;452.0,135.0&gt;--&lt;456.0,135.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;183.0,585.0&gt;--&lt;179.0,585.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;583.0,132.0&gt;--&lt;587.0,132.0&gt;&gt;
+
+* Q (U+0051) contains a short segment B&lt;&lt;415.0,-9.0&gt;-&lt;409.0,-9.0&gt;-&lt;403.5,-9.5&gt;&gt;
+
+* Q (U+0051) contains a short segment B&lt;&lt;403.5,-9.5&gt;-&lt;398.0,-10.0&gt;-&lt;392.0,-10.0&gt;&gt;
+
+* a (U+0061) contains a short segment L&lt;&lt;399.0,76.0&gt;--&lt;395.0,76.0&gt;&gt; 
+
+* And 63 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Regular.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have segments which seem very short:</p>
+<pre><code>* two (U+0032) contains a short segment L&lt;&lt;159.0,84.0&gt;--&lt;159.0,80.0&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;613.0,293.0&gt;-&lt;612.0,275.0&gt;-&lt;612.0,267.5&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;612.0,267.5&gt;-&lt;612.0,260.0&gt;-&lt;612.0,257.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;177.0,626.0&gt;--&lt;173.0,626.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;450.0,129.0&gt;--&lt;454.0,129.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;176.0,593.0&gt;--&lt;172.0,593.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;582.0,123.0&gt;--&lt;586.0,123.0&gt;&gt;
+
+* Q (U+0051) contains a short segment B&lt;&lt;416.0,-9.0&gt;-&lt;410.0,-9.0&gt;-&lt;403.5,-9.5&gt;&gt;
+
+* Q (U+0051) contains a short segment B&lt;&lt;403.5,-9.5&gt;-&lt;397.0,-10.0&gt;-&lt;391.0,-10.0&gt;&gt;
+
+* W (U+0057) contains a short segment B&lt;&lt;468.0,577.5&gt;-&lt;463.0,600.0&gt;-&lt;461.0,609.0&gt;&gt; 
+
+* And 67 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have segments which seem very short:</p>
+<pre><code>* two (U+0032) contains a short segment L&lt;&lt;197.0,111.0&gt;--&lt;197.0,106.0&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;626.0,295.0&gt;-&lt;625.0,281.0&gt;-&lt;625.0,272.0&gt;&gt;
+
+* at (U+0040) contains a short segment B&lt;&lt;625.0,272.0&gt;-&lt;625.0,263.0&gt;-&lt;625.0,260.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;201.0,590.0&gt;--&lt;197.0,590.0&gt;&gt;
+
+* M (U+004D) contains a short segment L&lt;&lt;458.0,150.0&gt;--&lt;462.0,150.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;200.0,564.0&gt;--&lt;196.0,564.0&gt;&gt;
+
+* N (U+004E) contains a short segment L&lt;&lt;587.0,154.0&gt;--&lt;590.0,154.0&gt;&gt;
+
+* Q (U+0051) contains a short segment B&lt;&lt;412.0,-10.0&gt;-&lt;408.0,-10.0&gt;-&lt;403.5,-10.0&gt;&gt;
+
+* Q (U+0051) contains a short segment B&lt;&lt;403.5,-10.0&gt;-&lt;399.0,-10.0&gt;-&lt;395.0,-10.0&gt;&gt;
+
+* a (U+0061) contains a short segment L&lt;&lt;397.0,75.0&gt;--&lt;393.0,75.0&gt;&gt; 
+
+* And 58 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-short-segments]</p>
+</span></li></ul></div></details>
+<h3>Do outlines contain any jaggy segments?</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_jaggy_segments&gt;</div>
+
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-Bold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have jaggy segments:</p>
+<pre><code>* W (U+0057): B&lt;&lt;266.0,196.0&gt;-&lt;272.0,161.0&gt;-&lt;275.0,137.0&gt;&gt;/B&lt;&lt;275.0,137.0&gt;-&lt;278.0,162.0&gt;-&lt;284.0,196.5&gt;&gt; = 13.967789761532726
+
+* W (U+0057): B&lt;&lt;489.0,505.5&gt;-&lt;485.0,529.0&gt;-&lt;483.0,542.0&gt;&gt;/B&lt;&lt;483.0,542.0&gt;-&lt;482.0,529.0&gt;-&lt;477.5,505.5&gt;&gt; = 13.144867617550734
+
+* W (U+0057): B&lt;&lt;683.0,196.0&gt;-&lt;689.0,161.0&gt;-&lt;692.0,137.0&gt;&gt;/B&lt;&lt;692.0,137.0&gt;-&lt;695.0,162.0&gt;-&lt;701.0,196.5&gt;&gt; = 13.967789761532726
+
+* Wacute (U+1E82): B&lt;&lt;266.0,196.0&gt;-&lt;272.0,161.0&gt;-&lt;275.0,137.0&gt;&gt;/B&lt;&lt;275.0,137.0&gt;-&lt;278.0,162.0&gt;-&lt;284.0,196.5&gt;&gt; = 13.967789761532726
+
+* Wacute (U+1E82): B&lt;&lt;489.0,505.5&gt;-&lt;485.0,529.0&gt;-&lt;483.0,542.0&gt;&gt;/B&lt;&lt;483.0,542.0&gt;-&lt;482.0,529.0&gt;-&lt;477.5,505.5&gt;&gt; = 13.144867617550734
+
+* Wacute (U+1E82): B&lt;&lt;683.0,196.0&gt;-&lt;689.0,161.0&gt;-&lt;692.0,137.0&gt;&gt;/B&lt;&lt;692.0,137.0&gt;-&lt;695.0,162.0&gt;-&lt;701.0,196.5&gt;&gt; = 13.967789761532726
+
+* Wcircumflex (U+0174): B&lt;&lt;266.0,196.0&gt;-&lt;272.0,161.0&gt;-&lt;275.0,137.0&gt;&gt;/B&lt;&lt;275.0,137.0&gt;-&lt;278.0,162.0&gt;-&lt;284.0,196.5&gt;&gt; = 13.967789761532726
+
+* Wcircumflex (U+0174): B&lt;&lt;489.0,505.5&gt;-&lt;485.0,529.0&gt;-&lt;483.0,542.0&gt;&gt;/B&lt;&lt;483.0,542.0&gt;-&lt;482.0,529.0&gt;-&lt;477.5,505.5&gt;&gt; = 13.144867617550734
+
+* Wcircumflex (U+0174): B&lt;&lt;683.0,196.0&gt;-&lt;689.0,161.0&gt;-&lt;692.0,137.0&gt;&gt;/B&lt;&lt;692.0,137.0&gt;-&lt;695.0,162.0&gt;-&lt;701.0,196.5&gt;&gt; = 13.967789761532726
+
+* Wdieresis (U+1E84): B&lt;&lt;266.0,196.0&gt;-&lt;272.0,161.0&gt;-&lt;275.0,137.0&gt;&gt;/B&lt;&lt;275.0,137.0&gt;-&lt;278.0,162.0&gt;-&lt;284.0,196.5&gt;&gt; = 13.967789761532726 
+
+* And 6 more.
+</code></pre>
+<p>Use -F or --full-lists to disable shortening of long lists. [code: found-jaggy-segments]</p>
+</span></li></ul></div></details>
+<details><summary>⚠️ <strong>fonts/NotoSansSundanese/googlefonts/ttf/NotoSansSundanese-SemiBold.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following glyphs have jaggy segments:</p>
+<pre><code>* W (U+0057): B&lt;&lt;481.0,529.0&gt;-&lt;475.0,558.0&gt;-&lt;473.0,572.0&gt;&gt;/B&lt;&lt;473.0,572.0&gt;-&lt;472.0,558.0&gt;-&lt;466.0,529.5&gt;&gt; = 12.215719134130818
+
+* Wacute (U+1E82): B&lt;&lt;481.0,529.0&gt;-&lt;475.0,558.0&gt;-&lt;473.0,572.0&gt;&gt;/B&lt;&lt;473.0,572.0&gt;-&lt;472.0,558.0&gt;-&lt;466.0,529.5&gt;&gt; = 12.215719134130818
+
+* Wcircumflex (U+0174): B&lt;&lt;481.0,529.0&gt;-&lt;475.0,558.0&gt;-&lt;473.0,572.0&gt;&gt;/B&lt;&lt;473.0,572.0&gt;-&lt;472.0,558.0&gt;-&lt;466.0,529.5&gt;&gt; = 12.215719134130818
+
+* Wdieresis (U+1E84): B&lt;&lt;481.0,529.0&gt;-&lt;475.0,558.0&gt;-&lt;473.0,572.0&gt;&gt;/B&lt;&lt;473.0,572.0&gt;-&lt;472.0,558.0&gt;-&lt;466.0,529.5&gt;&gt; = 12.215719134130818 
+
+* And Wgrave (U+1E80): B&lt;&lt;481.0,529.0&gt;-&lt;475.0,558.0&gt;-&lt;473.0,572.0&gt;&gt;/B&lt;&lt;473.0,572.0&gt;-&lt;472.0,558.0&gt;-&lt;466.0,529.5&gt;&gt; = 12.215719134130818 [code: found-jaggy-segments]
+</code></pre>
+</span></li></ul></div></details>
+                    </body>
+                </html>
