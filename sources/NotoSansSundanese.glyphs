@@ -766,7 +766,7 @@ subCategory = Nonspacing;
 },
 {
 glyphname = uni1B82;
-lastChange = "2022-09-02 13:00:21 +0000";
+lastChange = "2022-10-10 06:51:00 +0000";
 layers = (
 {
 layerId = master01;
@@ -825,7 +825,7 @@ width = 425;
 );
 unicode = 1B82;
 category = Mark;
-subCategory = "Spacing Combining";
+subCategory = Spacing;
 },
 {
 glyphname = uni1B83;
