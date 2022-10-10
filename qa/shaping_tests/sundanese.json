@@ -3,7 +3,8 @@
 		{
 			"expectation": "uni1B93=0+712|uni1BA5=0@118,0+0|uni1B91=2+1077|space=3+260|uni1B92=4+861|uni1BA8=4@-176,30+0|uni1B82=4+387|uni1B9E=7+797|uni1BA4=7@-116,30+0|uni1B96=9+793|uni1B92=10+861|uni1BAA=10+264|uni1B94=12+721",
 			"input": "ᮓᮥᮑ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ",
-			"note": "Attachments and spacing"
+			"note": "Attachments and spacing",
+			"only": "NotoSansSundanese-Regular.ttf"
 		}
 	]
 }
