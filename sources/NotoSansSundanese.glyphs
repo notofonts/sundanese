@@ -1,5 +1,8 @@
 {
-.appVersion = "3109";
+.appVersion = "3180";
+DisplayStrings = (
+"/uni1BA7"
+);
 classes = (
 {
 code = "uni1B82 uni1B83 uni1B84 uni1B85 uni1B86 uni1B87 uni1B88 uni1B89 uni1B8A uni1B8B uni1B8C uni1B8D uni1B8E uni1B8F uni1B90 uni1B91 uni1B92 uni1B93 uni1B94 uni1B95 uni1B96 uni1B97 uni1B98 uni1B99 uni1B9A uni1B9B uni1B9C uni1B9D uni1B9E uni1B9F uni1BA0 uni1BA6 uni1BA7 uni1BAA uni1BAE uni1BAF uni1BB0 uni1BB1 uni1BB2 uni1BB3 uni1BB4 uni1BB5 uni1BB6 uni1BB7 uni1BB8 uni1BB9 uni1BBA uni1BBB uni1BBC uni1BBD uni1BBE uni1BBF uni1CC0 uni1CC1 uni1CC2 uni1CC3 uni1CC4 uni1CC5 uni1CC6 uni1CC7 uni25CC ";
@@ -195,11 +198,15 @@ featurePrefixes = (
 {
 code = "languagesystem DFLT dflt;\012languagesystem sund dflt;\012";
 name = Languagesystems;
+},
+{
+code = "lookup to_1B80 {\012	sub uni1BA7 by uni1B80;\012	sub uni1BA1 by uni1B80;\012} to_1B80;\012\012lookup to_1BA1 {\012	sub uni1B80 by uni1BA1;\012} to_1BA1;\012\012lookup to_1BA7 {\012	sub uni1B80 by uni1BA7;\012} to_1BA7;";
+name = Swaps;
 }
 );
 features = (
 {
-code = "lookup LigatureSubstitution1 {\012    sub uni1BA1 uni1BA5 by uni1BA11BA5;\012    sub uni1BA2 uni1BA5 by uni1BA21BA5;\012    sub uni1BA3 uni1BA5 by uni1BA31BA5;\012} LigatureSubstitution1;\012\012lookup LigatureSubstitution2 {\012    sub uni1BA4 uni1B80 by uni1BA41B80;\012    sub uni1BA8 uni1B80 by uni1BA81B80;\012    sub uni1BA9 uni1B80 by uni1BA91B80;\012} LigatureSubstitution2;\012";
+code = "lookup LigatureSubstitution1 {\012    sub uni1BA1 uni1BA5 by uni1BA11BA5;\012    sub uni1BA2 uni1BA5 by uni1BA21BA5;\012    sub uni1BA3 uni1BA5 by uni1BA31BA5;\012} LigatureSubstitution1;\012\012lookup LigatureSubstitution2 {\012    sub uni1BA4 uni1B80 by uni1BA41B80;\012    sub uni1BA8 uni1B80 by uni1BA81B80;\012    sub uni1BA9 uni1B80 by uni1BA91B80;\012} LigatureSubstitution2;\012\012# Bubble anusvara towards base\012lookup swap1 {\012sub uni1BA7' lookup to_1B80 uni1B80' lookup to_1BA7;\012} swap1;\012lookup swap2 {\012sub uni1BA1' lookup to_1B80 uni1B80' lookup to_1BA1;\012} swap2;\012";
 name = ccmp;
 },
 {
@@ -4353,7 +4360,7 @@ subCategory = Other;
 },
 {
 glyphname = uni1BA7;
-lastChange = "2022-09-02 12:57:40 +0000";
+lastChange = "2023-04-14 20:35:56 +0000";
 layers = (
 {
 layerId = master01;
