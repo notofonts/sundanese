@@ -210,7 +210,7 @@ code = "lookup LigatureSubstitution1 {\012    sub uni1BA1 uni1BA5 by uni1BA11BA5
 name = ccmp;
 },
 {
-code = "# Automatic Code Start\012";
+code = "# Automatic Code Start\012\012# Give zeroed spacing marks their width back\012pos uni1BA1 212;\012pos uni1BA11BA5 286;";
 name = mark;
 },
 {
