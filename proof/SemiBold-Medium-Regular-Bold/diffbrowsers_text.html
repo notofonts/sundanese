@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>GFR - Text</title>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <style type="text/css">
     
         html{
@@ -139,20 +140,38 @@
 			}
 
 	  
-	    @font-face{
-    src: url(old-NotoSansSundanese[wght].ttf);
-    font-family: "old Noto Sans Sundanese";
-    font-weight: 400 700;
-    
-    font-style: normal;
-}
+
 	  
 
 	  
 	    @font-face{
-    src: url(new-NotoSansSundanese[wght].ttf);
-    font-family: "new Noto Sans Sundanese";
-    font-weight: 400 700;
+    src: url(NotoSansSundanese-SemiBold.ttf);
+    font-family: "Noto Sans Sundanese";
+    font-weight: 600;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(NotoSansSundanese-Regular.ttf);
+    font-family: "Noto Sans Sundanese";
+    font-weight: 400;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(NotoSansSundanese-Medium.ttf);
+    font-family: "Noto Sans Sundanese";
+    font-weight: 500;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(NotoSansSundanese-Bold.ttf);
+    font-family: "Noto Sans Sundanese";
+    font-weight: 700;
     
     font-style: normal;
 }
@@ -161,73 +180,45 @@
 	  
 
 	  
-	    .old-Regular{
-    font-family: "old Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 400.0;
-    
-    font-style: normal;
-}
-	  
-	    .old-Medium{
-    font-family: "old Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 500.0;
-    
-    font-style: normal;
-}
-	  
-	    .old-SemiBold{
-    font-family: "old Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 600.0;
-    
-    font-style: normal;
-}
-	  
-	    .old-Bold{
-    font-family: "old Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 700.0;
-    
-    font-style: normal;
-}
-	  
 
 	  
-	    .new-Regular{
-    font-family: "new Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 400.0;
+	    .SemiBold{
+    font-family: "Noto Sans Sundanese", "Adobe NotDef";
+    font-weight: 600;
     
     font-style: normal;
+    font-variation-settings: "wght" 600;
 }
 	  
-	    .new-Medium{
-    font-family: "new Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 500.0;
+	    .Medium{
+    font-family: "Noto Sans Sundanese", "Adobe NotDef";
+    font-weight: 500;
     
     font-style: normal;
+    font-variation-settings: "wght" 500;
 }
 	  
-	    .new-SemiBold{
-    font-family: "new Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 600.0;
+	    .Regular{
+    font-family: "Noto Sans Sundanese", "Adobe NotDef";
+    font-weight: 400;
     
     font-style: normal;
+    font-variation-settings: "wght" 400;
 }
 	  
-	    .new-Bold{
-    font-family: "new Noto Sans Sundanese", "Adobe NotDef";
-    font-weight: 700.0;
+	    .Bold{
+    font-family: "Noto Sans Sundanese", "Adobe NotDef";
+    font-weight: 700;
     
     font-style: normal;
+    font-variation-settings: "wght" 700;
 }
-	  
-
 	  
 	
     </style>
 </head>
 <body>
     <div id="nav">
-		
-			<div class="nav-item" id="font-toggle">old</div>
 		
 		
 	</div>
@@ -238,23 +229,23 @@
 	
   
     <div class="box">
-      <div class="box-title">old-Regular 20pt</div>
-	<div class="box-text old-Regular" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
+      <div class="box-title">SemiBold 20pt</div>
+	<div class="box-text SemiBold" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
     </div>
   
     <div class="box">
-      <div class="box-title">old-Medium 20pt</div>
-	<div class="box-text old-Medium" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
+      <div class="box-title">Medium 20pt</div>
+	<div class="box-text Medium" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
     </div>
   
     <div class="box">
-      <div class="box-title">old-SemiBold 20pt</div>
-	<div class="box-text old-SemiBold" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
+      <div class="box-title">Regular 20pt</div>
+	<div class="box-text Regular" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
     </div>
   
     <div class="box">
-      <div class="box-title">old-Bold 20pt</div>
-	<div class="box-text old-Bold" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
+      <div class="box-title">Bold 20pt</div>
+	<div class="box-text Bold" dir="auto" style="font-size: 20pt">- ‐ ᮞᮝᮙᮔ ᮒᮕ ᮚᮒᮢ ᮏᮌᮒᮤ ᮯᮔ᮪ᮒᮤᮔᮡᮚᮞ᮪ᮝᮒᮔ᮪ᮒᮢᮡᮔᮀ ᮃᮓᮛᮂ ᮞᮁᮝᮨᮯᮙᮕᮤ ᮞᮙᮥᮒ᮪ᮕᮔ᮪ᮔᮂ ᮌᮅᮛᮝᮓᮢᮩᮯ ᮃᮓᮤᮊᮛᮓᮢᮩᮯ ᮎ ᮈᮝ ᮃᮘᮤᮌᮧᮯᮔᮚᮀ ᮝᮤᮔᮄᮝ ᮠᮞ᮪ᮒᮊ᮪ᮯᮨᮕᮀ ᮃᮓᮤᮊᮛᮨᮺᮞ᮪ᮙᮤᮔ᮪ ᮕᮢᮔᮯᮜᮊ᮪ᮯᮡᮓᮛᮨᮔ ᮞ᮪ᮒᮛᮑ᮪ᮎ ᮒᮨᮂᮞᮤᮖᮒ᮪ᮔ ᮏᮦᮀ</div>
     </div>
   
 
@@ -293,17 +284,37 @@
 		fontToggle.addEventListener("click", switchFonts);
 	}
 
-    const divs = document.querySelectorAll('.node');
-    divs.forEach(el => el.addEventListener('click', event => {
-    var children = event.target.querySelectorAll(".node");
-    children.forEach(function(e) {
-        if (e.style.display === "none") {
-            e.style.display = "block";
-        } else {
-            e.style.display = "none";
-        }
-    })
-    }));
+	function render(node, toplevel) {
+		var wrapper = $("<div> </div>");
+		if (!node) { return wrapper }
+		if (Array.isArray(node)) {
+			var before = $("<span/>");
+			before.addClass("attr-before");
+			before.html(" " + node[0] + " ");
+			var after = $("<span/>");
+			after.addClass("attr-after");
+			after.append(node[1]);
+			wrapper.append(before);
+			wrapper.append(after);
+			return wrapper
+		}
+		for (const [key, value] of Object.entries(node)) {
+			var display = $("<div/>");
+			display.addClass("node")
+			if (!toplevel && ! key.match(/^\d+$/)) {
+				display.hide()
+			}
+			display.append(key);
+			display.append(render(value, false).children());
+			wrapper.append(display)
+		}
+		return wrapper
+
+	}
+	$(function() {
+		$("#difftable").append(render(fontdiff, true).children())
+		$(".node").on("click", function(event){ $(this).children().toggle(); event.stopPropagation() })
+	});
     
 	// break text so that no reflow happens
 async function breakText() {
