@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Glyphs</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+    
+
+        html{
+	  font-family: sans-serif;
+	}
+    @font-face {
+        font-family: "Adobe NotDef";
+        src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+    }
+	.box-title{
+	  width: 100%;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	  width: 100%;
+	  float: left;
+	}
+	.box-text{
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	  z-index: 100;
+	}
+	#font-toggle{
+	}
+	.nav-item{
+		display: block;
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+		text-align: center;
+		color: white;
+		background-color: black;
+		display: block;
+		font-size: 9pt;
+		padding: 5px;
+		margin: 2px;
+	}
+	.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	}
+
+	.tooltip .tooltiptext {
+	font-family: sans-serif;
+	visibility: hidden;
+	width: 500px;
+	background-color: black;
+	color: #fff;
+	text-align: left;
+	font-size: 12pt;
+	line-height: 15pt;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	padding: 10px;
+	visibility: visible;
+	}
+	.tooltipleft {
+		float:left;
+		width: 249px;
+	}
+	.tooltipright {
+		float:right;
+		width:250px;
+	}
+
+			/* Stuff needed for the table differ */
+            body {
+                font-family: Helvetica;
+            }
+            .node {
+                font-family: courier;
+                cursor: pointer;
+                position: relative;
+                left: 30px;
+                padding: 5px;
+                display: block;
+                border: 1px dashed grey;
+            }
+            .header {
+            font-weight: bold;
+            }
+            .attrib-old{
+                color: red;
+                cursor: text;
+            }
+            .attrib-new{
+                color: green;
+                cursor: text;
+            }
+            .leaf {
+            font-weight: bold;
+            }
+            .old .cell .new {
+            	display:  none;
+            }
+            .new .cell .old {
+            	display:  none;
+            }
+            .both .cell .old {
+            	opacity: 0.75;
+            	color:  red;
+            }
+            .both .cell .new {
+            	opacity: 0.75;
+            	position: absolute;
+            	top: 0;
+            	color:  green;
+            }
+			.spacer {
+				display:block;
+				float:left;
+				width:100%;
+			}
+
+	  
+	    @font-face{
+    src: url(old-NotoSansSundanese[wght].ttf);
+    font-family: "old font";
+    font-weight: 400 700;
+    
+    font-style: normal;
+}
+	  
+
+	  
+	    @font-face{
+    src: url(new-NotoSansSundanese[wght].ttf);
+    font-family: "new font";
+    font-weight: 400 700;
+    
+    font-style: normal;
+}
+	  
+
+	  
+
+	  
+	    .old-wght-700_0{
+    font-family: "old font", "Adobe NotDef";
+    font-weight: 700.0;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 700.0;
+}
+	  
+
+	  
+	    .new-wght-700_0{
+    font-family: "new font", "Adobe NotDef";
+    font-weight: 700.0;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 700.0;
+}
+	  
+
+	  
+	
+.cell{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  width: 50pt;
+  line-height: 48.0px;
+}
+.cell-word{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  line-height: 48.0px;
+}
+.cat-strings .cell {
+  clear: both;
+  position: static;
+  float: none;
+  text-align: left;
+}
+.box-title {
+  clear: both;
+}
+
+
+	   #ot-panel {
+		max-height: 400px;
+		overflow-y: scroll;
+		background: white;
+		padding: 10px;
+		display: none;
+	   }
+    </style>
+</head>
+<body>
+    <div id="nav">
+		
+			<div class="nav-item" id="font-toggle">old</div>
+		
+			<div class="nav-item" id="ot-button">OT features</div>
+			<div id="ot-panel">
+			</div>
+		
+	</div>
+    <div id="content">
+	<h2>
+<b>Diffenator</b>
+</h2>
+	
+  
+    <div class="box">
+    <div class="box-title">Tables</div>
+     <script>var fontdiff = {"GPOS": {"table": {"LookupList": {"Lookup": {"0": {"SubTable": {"0": {"MarkCoverage": {"glyphs": {"2": ["uni1BA2", "uni1BA1"], "3": ["uni1BA21BA5", "uni1BA2"], "4": ["uni1BA3", "uni1BA21BA5"], "5": ["uni1BA31BA5", "uni1BA3"], "6": ["uni1BA4", "uni1BA31BA5"], "7": ["uni1BA41B80", "uni1BA4"], "8": ["uni1BA5", "uni1BA41B80"], "9": ["uni1BA8", "uni1BA5"], "10": ["uni1BA81B80", "uni1BA8"], "11": ["uni1BA9", "uni1BA81B80"], "12": ["uni1BA91B80", "uni1BA9"], "13": ["uni1BAC", "uni1BA91B80"], "14": ["uni1BAD", "uni1BAC"], "15": [null, "uni1BAD"]}}, "MarkArray": {"MarkCount": [15, 16], "MarkRecord": {"2": {"MarkAnchor": {"XCoordinate": [-254, -420]}}, "3": {"MarkAnchor": {"XCoordinate": [-245, -254]}}, "4": {"MarkAnchor": {"XCoordinate": [-513, -245]}}, "5": {"MarkAnchor": {"XCoordinate": [-284, -513]}}, "6": {"MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-259, -284]}, "Class": [0, 1]}, "7": {"MarkAnchor": {"XCoordinate": [-280, -259]}}, "8": {"MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-489, -280]}, "Class": [1, 0]}, "9": {"MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-235, -489]}, "Class": [0, 1]}, "10": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "11": {"MarkAnchor": {"XCoordinate": [-235, -280]}}, "12": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "13": {"MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-479, -280]}, "Class": [1, 0]}, "15": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, -479], "YCoordinate": [null, 0]}}}}}}}, "2": {"SubTable": {"0": {"MarkCoverage": {"glyphs": {"2": ["uni1BA2", "uni1BA1"], "3": ["uni1BA21BA5", "uni1BA2"], "4": ["uni1BA3", "uni1BA21BA5"], "5": ["uni1BA31BA5", "uni1BA3"], "6": ["uni1BA4", "uni1BA31BA5"], "7": ["uni1BA41B80", "uni1BA4"], "8": ["uni1BA5", "uni1BA41B80"], "9": ["uni1BA8", "uni1BA5"], "10": ["uni1BA81B80", "uni1BA8"], "11": ["uni1BA9", "uni1BA81B80"], "12": ["uni1BA91B80", "uni1BA9"], "13": ["uni1BAC", "uni1BA91B80"], "14": ["uni1BAD", "uni1BAC"], "15": [null, "uni1BAD"]}}, "MarkArray": {"MarkCount": [15, 16], "MarkRecord": {"2": {"MarkAnchor": {"XCoordinate": [-254, -420]}}, "3": {"MarkAnchor": {"XCoordinate": [-245, -254]}}, "4": {"MarkAnchor": {"XCoordinate": [-513, -245]}}, "5": {"MarkAnchor": {"XCoordinate": [-284, -513]}}, "6": {"MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-259, -284]}, "Class": [0, 1]}, "7": {"MarkAnchor": {"XCoordinate": [-280, -259]}}, "8": {"MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-489, -280]}, "Class": [1, 0]}, "9": {"MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-235, -489]}, "Class": [0, 1]}, "10": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "11": {"MarkAnchor": {"XCoordinate": [-235, -280]}}, "12": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "13": {"MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-479, -280]}, "Class": [1, 0]}, "15": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, -479], "YCoordinate": [null, 0]}}}}}}}}}}}, "HVAR": {"table": {"AdvWidthMap": {"mapping": {"uni1BA6": [0, 2], "uni1B9E": [65552, 17], "uni1BA1": [65562, 27], "uni2010": [0, 2], "hyphen": [65549, 14], "uni1BAB": [0, 2], "uni1CC7": [131075, 65539], "uni1B90": [65566, 31], "uni1BA4": [0, 2], "uni1BA81B80": [0, 2], "uni200D": [0, 2], "uni1BA91B80": [0, 2], "uni1CC5": [65559, 24], "uni1BAE": [131086, 65550], "uni1CC6": [131087, 65551], "uni1B80": [0, 2], "uni1BA3": [0, 2], "uni1B9F": [65550, 15], "uni1BA31BA5": [0, 2], "uni1B85": [65549, 14], "uni1BBC": [131083, 65547], "uni1BA9": [0, 2], "uni200C": [0, 2], "uni1BA7": [0, 2], "uni1B81": [0, 2], "uni1CC1": [0, 2], "uni1BB1": [65545, 10], "uni1B87": [131080, 65544], "uni1B95": [65554, 19], "uni1B8E": [65556, 21], "uni1CC4": [131088, 65552], "uni1CC3": [0, 2], "uni1BA8": [0, 2], "uni1BBE": [65538, 3], "uni1B9A": [131076, 65540], "uni1BB3": [65549, 14], "uni1BB2": [131073, 65537], "uni1B8B": [131077, 65541], "uni1BBF": [65539, 4], "uni1B93": [131078, 65542], "uni1B8C": [65558, 23], "uni1BBB": [131074, 65538], "uni1BA11BA5": [0, 2], "uni00A0": [0, 2], "uni1B84": [65544, 9], "uni1B8A": [65553, 18], "uni1BB0": [0, 2], "uni1B83": [65542, 7], "uni1CC0": [65540, 5], "uni1BB4": [65565, 30], "CR": [0, 2], "uni1BAD": [0, 2], "uni1B89": [0, 2], "uni1B9C": [131082, 65546], "uni1BA2": [0, 2], "uni1B8F": [131085, 65549], "uni1BB7": [131084, 65548], "uni1B9B": [65543, 8], "uni200B": [0, 2], "uni1B91": [65537, 1], "uni1B99": [65563, 28], "uni1CC2": [0, 2], "uni1B96": [65551, 16], "uni1BA5": [0, 2], "uni1BBA": [65549, 14], "uni25CC": [0, 2], "uni1BB9": [65557, 22], "uni1B8D": [65561, 26], "uni1BA41B80": [0, 2], "uni1BB8": [131072, 65536], ".notdef": [0, 2], "uni1BAF": [131079, 65543], "space": [0, 2], "uni1BAA": [65541, 6], "uni1B86": [0, 2], "uni1B94": [65548, 13], "uni1B9D": [65555, 20], "uni1BB6": [65551, 16], "uni1B98": [65547, 12], "uni1BA21BA5": [0, 2], "uni1B82": [65546, 11], "NULL": [0, 2], "uni1BA0": [131083, 65547], "uni1BBD": [65536, 0], "uni1BB5": [131081, 65545], "uni1B92": [65564, 29], "uni1B97": [65560, 25], "uni1BAC": [0, 2], "uni1B88": [0, 2]}}, "VarStore": {"VarDataCount": [3, 2], "VarData": {"0": {"Item": {"0": {"0": [null, -33]}, "1": {"0": [null, -4]}, "2": {"0": [null, 0]}, "3": {"0": [null, 6]}, "4": {"0": [null, 8]}, "5": {"0": [null, 20]}, "6": {"0": [null, 26]}, "7": {"0": [null, 27]}, "8": {"0": [null, 32]}, "9": {"0": [null, 34]}, "10": {"0": [null, 37]}, "11": {"0": [null, 38]}, "12": {"0": [null, 45]}, "13": {"0": [null, 49]}, "14": {"0": [null, 50]}, "15": {"0": [null, 53]}, "16": {"0": [null, 56]}, "17": {"0": [null, 63]}, "18": {"0": [null, 65]}, "19": {"0": [null, 66]}, "20": {"0": [null, 68]}, "21": {"0": [null, 74]}, "22": {"0": [null, 75]}, "23": {"0": [null, 77]}, "24": {"0": [null, 84]}, "25": {"0": [null, 85]}, "26": {"0": [null, 100]}, "27": {"0": [null, 110]}, "28": {"0": [null, 114]}, "29": {"0": [null, 117]}, "30": {"0": [null, 120]}, "31": {"0": [null, 125]}}, "VarRegionCount": [0, 1], "ItemCount": [1, 32], "VarRegionIndex": {"0": [null, 0]}}, "1": {"Item": {"0": {"0": [-33, 139]}, "1": {"0": [-4, 146]}, "2": {"0": [6, 154]}, "3": {"0": [8, 159]}, "4": {"0": [20, 163]}, "5": {"0": [26, 170]}, "6": {"0": [27, 178]}, "7": {"0": [32, 183]}, "8": {"0": [34, 185]}, "9": {"0": [37, 192]}, "10": {"0": [38, 200]}, "11": {"0": [45, 237]}, "12": {"0": [49, 250]}, "13": {"0": [50, 274]}, "14": {"0": [53, 284]}, "15": {"0": [56, 303]}, "16": {"0": [63, 434]}, "17": {"0": [65, null]}, "18": {"0": [66, null]}, "19": {"0": [68, null]}, "20": {"0": [74, null]}, "21": {"0": [75, null]}, "22": {"0": [77, null]}, "23": {"0": [84, null]}, "24": {"0": [85, null]}, "25": {"0": [100, null]}, "26": {"0": [110, null]}, "27": {"0": [114, null]}, "28": {"0": [117, null]}, "29": {"0": [120, null]}, "30": {"0": [125, null]}}, "NumShorts": [0, 1], "ItemCount": [31, 17]}, "2": {"ItemCount": [17, null], "NumShorts": [1, null], "VarRegionCount": [1, null], "VarRegionIndex": {"0": [0, null]}, "Item": {"0": {"0": [139, null]}, "1": {"0": [146, null]}, "2": {"0": [154, null]}, "3": {"0": [159, null]}, "4": {"0": [163, null]}, "5": {"0": [170, null]}, "6": {"0": [178, null]}, "7": {"0": [183, null]}, "8": {"0": [185, null]}, "9": {"0": [192, null]}, "10": {"0": [200, null]}, "11": {"0": [237, null]}, "12": {"0": [250, null]}, "13": {"0": [274, null]}, "14": {"0": [284, null]}, "15": {"0": [303, null]}, "16": {"0": [434, null]}}}}}}}, "GDEF": {"table": {"GlyphClassDef": {"classDefs": {"uni1BA1": [null, 3]}}}}, "head": {"checkSumAdjustment": [3162055929, 999664298], "modified": [3770173521, 3777889726]}};</script><div id="difftable"></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+      <div class="box">
+        <div class="box-title">Modified encoded Glyphs</div>
+        <div class="box-text old-wght-700_0" style="font-size: 32pt">
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ᮡ<br>
+        <span class="tooltiptext">
+            name: SUNDANESE CONSONANT SIGN PAMINGKAL<br>
+            unicode: U+1BA1<br>
+            changed pixels: 5.08%
+        </span>
+    </div>
+</div>
+            </div>
+          
+          </div>
+      </div>
+    
+
+    
+    
+    <div class="box">
+      <div class="box-title">Misshapen user strings</div>
+      <div class="box-text old-wght-700_0" style="font-size: 32pt">
+        
+      </div>
+    </div>
+    
+
+    
+
+    </div>
+  
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "old"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	boxTitles = document.getElementsByClassName("box-title")
+	items = document.getElementsByClassName("box-text");
+	  
+	if (POSITION === "old") {
+	  POSITION = "new"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("old", "new")
+	    fontToggle.textContent = "new"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("old", "new")
+	  }
+
+	  } else {
+	  POSITION = "old"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("new", "old")
+	    fontToggle.textContent = "old"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("new", "old")
+	  }
+	}
+	}
+	if (fontToggle !== null) {
+		fontToggle.addEventListener("click", switchFonts);
+	}
+
+// apply optional ot feats
+
+function buildFeatureList() {
+	var features = [
+		'aalt', 'c2sc', 'calt', 'case', 'cpsp', 'dlig', 'dnom',
+		'fina', 'frac', 'init', 'kern', 'liga', 'lnum', 'numr', 'onum',
+		'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'sups',
+		'swsh', 'titl', 'tnum', 'zero', 'ss01', 'ss02',
+		'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08',
+		'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14',
+		'ss15', 'ss16', 'ss17', 'ss18', 'ss19', 'ss20'
+	]
+	
+	var otPanel = document.getElementById("ot-panel")
+	for (i=0; i<features.length; i++) {
+		var feat = features[i]
+		
+		var row = document.createElement("div");
+
+		var item = document.createElement("input");
+		item.type = "checkbox"
+		item.value = feat
+		item.classList.add("ot-checkbox")
+		var label = document.createElement("label")
+		label.textContent = feat
+
+		row.appendChild(item)
+		row.appendChild(label)
+
+		otPanel.appendChild(row)
+	}
+}
+
+buildFeatureList()
+
+
+function enableFeatures() {
+	var checkboxes = document.getElementsByClassName("ot-checkbox")
+	var res = []
+	var disableKerning = false
+	for (i=0; i<checkboxes.length; i++) {
+		if (checkboxes[i].checked === true) {
+			var checkbox = checkboxes[i]
+			res.push('"' + checkbox.value + '"')
+
+			if (checkbox.value === "kern") {
+				disableKerning = true
+			}
+		}
+	}	
+
+	var boxText = document.getElementsByClassName("box-text")
+	var otString = res.join(", ")
+	for (j=0; j<boxText.length; j++) {
+		boxText[j].style.fontFeatureSettings = otString
+		if (disableKerning === true) {
+			boxText[j].style.fontKerning = "none"
+		}
+	}
+}
+
+var otButton = document.getElementById("ot-button")
+otButton.addEventListener("click", function() {
+    otPanel = document.getElementById("ot-panel")
+    if (otPanel.style.display !== "block") {
+        otPanel.style.display = "block"
+    } else {
+        otPanel.style.display = "none"
+    }
+})
+var checkboxes = document.getElementsByClassName("ot-checkbox")
+for (i=0; i<checkboxes.length; i++) {
+	cb = checkboxes[i]
+	cb.addEventListener("click", enableFeatures)
+}	
+    
+	function render(node, toplevel) {
+		var wrapper = $("<div> </div>");
+		if (!node) { return wrapper }
+		if (Array.isArray(node)) {
+			var before = $("<span/>");
+			before.addClass("attr-before");
+			before.html(" " + node[0] + " ");
+			var after = $("<span/>");
+			after.addClass("attr-after");
+			after.append(node[1]);
+			wrapper.append(before);
+			wrapper.append(after);
+			return wrapper
+		}
+		for (const [key, value] of Object.entries(node)) {
+			var display = $("<div/>");
+			display.addClass("node")
+			if (!toplevel && ! key.match(/^\d+$/)) {
+				display.hide()
+			}
+			display.append(key);
+			display.append(render(value, false).children());
+			wrapper.append(display)
+		}
+		return wrapper
+
+	}
+	$(function() {
+		$("#difftable").append(render(fontdiff, true).children())
+		$("#difftable .node").on("click", function(event){ $(this).children().toggle(); event.stopPropagation() })
+	});
+
+function wordBreaks() {
+  words = document.getElementsByClassName("cell-word")
+  res = []
+  prevTop = 0
+  for (i=0; i<words.length; i++) {
+      var word = words[i]
+      currentTop = word.getBoundingClientRect().top
+      if (currentTop > prevTop) {
+          res.push(i)
+      }
+      prevTop = currentTop
+  }
+  return res
+}
+
+async function insertBreaks() {
+  switchFonts()
+  await sleep(1)
+  breaksBefore = wordBreaks()
+  switchFonts()
+  await sleep(1)
+  breaksAfter = wordBreaks()
+
+
+  console.log(breaksBefore.length, breaksAfter.length)
+
+  if (breaksBefore.length >= breaksAfter.length) {
+    breaks = breaksBefore
+  } else {
+    breaks = breaksAfter
+  }
+
+  words = document.getElementsByClassName("cell-word")
+  breaks.forEach(function(i) {
+    if (i != 0) {
+      i = i
+    }
+    word = words[i]
+    spacer = document.createElement("div")
+    spacer.className = "spacer"
+    word.parentNode.insertBefore(spacer, word)
+  })
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  
+insertBreaks()
+
+
+    </script>
+</html>
