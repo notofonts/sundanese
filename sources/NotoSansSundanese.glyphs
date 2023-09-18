@@ -1,7 +1,7 @@
 {
-.appVersion = "3180";
+.appVersion = "3205";
 DisplayStrings = (
-"/uni1BA7"
+"/uni1BA7/uni1BA1"
 );
 classes = (
 {
@@ -3706,7 +3706,7 @@ unicode = 1BA0;
 },
 {
 glyphname = uni1BA1;
-lastChange = "2022-09-02 12:55:05 +0000";
+lastChange = "2023-09-18 13:40:25 +0000";
 layers = (
 {
 anchors = (
@@ -3775,7 +3775,7 @@ width = 322;
 );
 unicode = 1BA1;
 category = Mark;
-subCategory = Spacing;
+subCategory = "Spacing Combining";
 },
 {
 glyphname = uni1BA11BA5;
