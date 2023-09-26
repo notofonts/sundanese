@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Glyphs</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+    
+
+        html{
+	  font-family: sans-serif;
+	}
+    @font-face {
+        font-family: "Adobe NotDef";
+        src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+    }
+	.box-title{
+	  width: 100%;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	  width: 100%;
+	  float: left;
+	}
+	.box-text{
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	  z-index: 100;
+	}
+	#font-toggle{
+	}
+	.nav-item{
+		display: block;
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+		text-align: center;
+		color: white;
+		background-color: black;
+		display: block;
+		font-size: 9pt;
+		padding: 5px;
+		margin: 2px;
+	}
+	.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	}
+
+	.tooltip .tooltiptext {
+	font-family: sans-serif;
+	visibility: hidden;
+	width: 500px;
+	background-color: black;
+	color: #fff;
+	text-align: left;
+	font-size: 12pt;
+	line-height: 15pt;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	padding: 10px;
+	visibility: visible;
+	}
+	.tooltipleft {
+		float:left;
+		width: 249px;
+	}
+	.tooltipright {
+		float:right;
+		width:250px;
+	}
+
+			/* Stuff needed for the table differ */
+            body {
+                font-family: Helvetica;
+            }
+            .node {
+                font-family: courier;
+                cursor: pointer;
+                position: relative;
+                left: 30px;
+                padding: 5px;
+                display: block;
+                border: 1px dashed grey;
+            }
+            .header {
+            font-weight: bold;
+            }
+            .attrib-old{
+                color: red;
+                cursor: text;
+            }
+            .attrib-new{
+                color: green;
+                cursor: text;
+            }
+            .leaf {
+            font-weight: bold;
+            }
+            .old .cell .new {
+            	display:  none;
+            }
+            .new .cell .old {
+            	display:  none;
+            }
+            .both .cell .old {
+            	opacity: 0.75;
+            	color:  red;
+            }
+            .both .cell .new {
+            	opacity: 0.75;
+            	position: absolute;
+            	top: 0;
+            	color:  green;
+            }
+			.spacer {
+				display:block;
+				float:left;
+				width:100%;
+			}
+
+	  
+	    @font-face{
+    src: url(old-NotoSansSundanese[wght].ttf);
+    font-family: "old font";
+    font-weight: 400 700;
+    
+    font-style: normal;
+}
+	  
+
+	  
+	    @font-face{
+    src: url(new-NotoSansSundanese-Medium.ttf);
+    font-family: "new font";
+    font-weight: 500;
+    
+    font-style: normal;
+}
+	  
+
+	  
+
+	  
+	    .old-Medium{
+    font-family: "old font", "Adobe NotDef";
+    font-weight: 500.0;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 500.0;
+}
+	  
+
+	  
+	    .new-Medium{
+    font-family: "new font", "Adobe NotDef";
+    font-weight: 500;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 500;
+}
+	  
+
+	  
+	
+.cell{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  width: 50pt;
+  line-height: 48.0px;
+}
+.cell-word{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  line-height: 48.0px;
+}
+.cat-strings .cell {
+  clear: both;
+  position: static;
+  float: none;
+  text-align: left;
+}
+.box-title {
+  clear: both;
+}
+
+
+	   #ot-panel {
+		max-height: 400px;
+		overflow-y: scroll;
+		background: white;
+		padding: 10px;
+		display: none;
+	   }
+    </style>
+</head>
+<body>
+    <div id="nav">
+		
+			<div class="nav-item" id="font-toggle">old</div>
+		
+			<div class="nav-item" id="ot-button">OT features</div>
+			<div id="ot-panel">
+			</div>
+		
+	</div>
+    <div id="content">
+	<h2>
+<b>Diffenator</b>
+</h2>
+	
+  
+    <div class="box">
+    <div class="box-title">Tables</div>
+     <script>var fontdiff = {"gasp": {"tableTag": ["gasp", null], "version": [1, null], "gaspRange": {"65535": [15, null]}}, "GPOS": {"table": {"LookupList": {"Lookup": {"0": {"SubTable": {"0": {"MarkCoverage": {"glyphs": {"2": ["uni1BA2", "uni1BA1"], "3": ["uni1BA21BA5", "uni1BA2"], "4": ["uni1BA3", "uni1BA21BA5"], "5": ["uni1BA31BA5", "uni1BA3"], "6": ["uni1BA4", "uni1BA31BA5"], "7": ["uni1BA41B80", "uni1BA4"], "8": ["uni1BA5", "uni1BA41B80"], "9": ["uni1BA8", "uni1BA5"], "10": ["uni1BA81B80", "uni1BA8"], "11": ["uni1BA9", "uni1BA81B80"], "12": ["uni1BA91B80", "uni1BA9"], "13": ["uni1BAC", "uni1BA91B80"], "14": ["uni1BAD", "uni1BAC"], "15": [null, "uni1BAD"]}}, "MarkArray": {"MarkCount": [15, 16], "MarkRecord": {"2": {"MarkAnchor": {"XCoordinate": [-254, -420]}}, "3": {"MarkAnchor": {"XCoordinate": [-245, -254]}}, "4": {"MarkAnchor": {"XCoordinate": [-513, -245]}}, "5": {"MarkAnchor": {"XCoordinate": [-284, -513]}}, "6": {"Class": [0, 1], "MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-259, -284]}}, "7": {"MarkAnchor": {"XCoordinate": [-280, -259]}}, "8": {"Class": [1, 0], "MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-489, -280]}}, "9": {"Class": [0, 1], "MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-235, -489]}}, "10": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "11": {"MarkAnchor": {"XCoordinate": [-235, -280]}}, "12": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "13": {"Class": [1, 0], "MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-479, -280]}}, "15": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, -479], "YCoordinate": [null, 0]}}}}}}}, "2": {"SubTable": {"0": {"MarkCoverage": {"glyphs": {"2": ["uni1BA2", "uni1BA1"], "3": ["uni1BA21BA5", "uni1BA2"], "4": ["uni1BA3", "uni1BA21BA5"], "5": ["uni1BA31BA5", "uni1BA3"], "6": ["uni1BA4", "uni1BA31BA5"], "7": ["uni1BA41B80", "uni1BA4"], "8": ["uni1BA5", "uni1BA41B80"], "9": ["uni1BA8", "uni1BA5"], "10": ["uni1BA81B80", "uni1BA8"], "11": ["uni1BA9", "uni1BA81B80"], "12": ["uni1BA91B80", "uni1BA9"], "13": ["uni1BAC", "uni1BA91B80"], "14": ["uni1BAD", "uni1BAC"], "15": [null, "uni1BAD"]}}, "MarkArray": {"MarkCount": [15, 16], "MarkRecord": {"2": {"MarkAnchor": {"XCoordinate": [-254, -420]}}, "3": {"MarkAnchor": {"XCoordinate": [-245, -254]}}, "4": {"MarkAnchor": {"XCoordinate": [-513, -245]}}, "5": {"MarkAnchor": {"XCoordinate": [-284, -513]}}, "6": {"Class": [0, 1], "MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-259, -284]}}, "7": {"MarkAnchor": {"XCoordinate": [-280, -259]}}, "8": {"Class": [1, 0], "MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-489, -280]}}, "9": {"Class": [0, 1], "MarkAnchor": {"YCoordinate": [751, 0], "XCoordinate": [-235, -489]}}, "10": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "11": {"MarkAnchor": {"XCoordinate": [-235, -280]}}, "12": {"MarkAnchor": {"XCoordinate": [-280, -235]}}, "13": {"Class": [1, 0], "MarkAnchor": {"YCoordinate": [0, 751], "XCoordinate": [-479, -280]}}, "15": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, -479], "YCoordinate": [null, 0]}}}}}}}}}}}, "avar": {"tableTag": ["avar", null], "segments": {"wght": {"-1.0": [-1.0, null], "0.0": [0.0, null], "0.33331298828125": [0.1568603515625, null], "0.66668701171875": [0.54901123046875, null], "1.0": [1.0, null]}}, "table": {"Version": [65536, null], "Reserved": [0, null], "AxisCount": [1, null], "AxisSegmentMap": {"0": {"PositionMapCount": [5, null], "AxisValueMap": {"0": {"FromCoordinate": [-1.0, null], "ToCoordinate": [-1.0, null]}, "1": {"FromCoordinate": [0.0, null], "ToCoordinate": [0.0, null]}, "2": {"FromCoordinate": [0.33331298828125, null], "ToCoordinate": [0.1568603515625, null]}, "3": {"FromCoordinate": [0.66668701171875, null], "ToCoordinate": [0.54901123046875, null]}, "4": {"FromCoordinate": [1.0, null], "ToCoordinate": [1.0, null]}}}}}, "majorVersion": [1, null], "minorVersion": [0, null]}, "STAT": {"axis values": {"Regular": {"format": [3, null], "AxisIndex": [0, null], "Flags": [2, null], "Value": [400.0, null]}, "Medium": {"format": [1, null], "AxisIndex": [0, null], "Flags": [0, null], "Value": [500.0, null]}, "SemiBold": {"format": [1, null], "AxisIndex": [0, null], "Flags": [0, null], "Value": [600.0, null]}, "Bold": {"format": [1, null], "AxisIndex": [0, null], "Flags": [0, null], "Value": [700.0, null]}}, "design axis records": {"wght": {"order": [0, null], "AxisName": ["Weight", null]}}}, "name": {"260/3/1/1033": ["Bold", null], "264/1/0/0": ["Bold", null], "256/3/1/1033": ["Weight", null], "16/3/1/1033": [null, "Noto Sans Sundanese"], "263/3/1/1033": ["SemiBold", null], "17/3/1/1033": [null, "Medium"], "261/3/1/1033": ["Regular", null], "259/3/1/1033": ["SemiBold", null], "262/1/0/0": ["Medium", null], "3/3/1/1033": ["2.004;GOOG;NotoSansSundanese-Regular", "2.005;GOOG;NotoSansSundanese-Medium"], "25/3/1/1033": ["NotoSansSundanese", null], "6/3/1/1033": ["NotoSansSundanese-Regular", "NotoSansSundanese-Medium"], "261/1/0/0": ["Regular", null], "263/1/0/0": ["SemiBold", null], "258/3/1/1033": ["Medium", null], "5/3/1/1033": ["Version 2.004", "Version 2.005"], "262/3/1/1033": ["Medium", null], "4/3/1/1033": ["Noto Sans Sundanese Regular", "Noto Sans Sundanese Medium"], "264/3/1/1033": ["Bold", null]}, "GDEF": {"table": {"GlyphClassDef": {"classDefs": {"uni1BA1": [null, 3]}}}}, "hhea": {"minLeftSideBearing": [-673, -676], "advanceWidthMax": [1680, 1748], "xMaxExtent": [1730, 1799]}, "prep": {"tableTag": ["prep", null]}, "OS/2": {"xAvgCharWidth": [757, 771], "panose": {"bWeight": [5, 6]}, "usWeightClass": [400, 500]}, "hmtx": {"metrics": {"uni1BBC": {"0": [1180, 1217]}, "uni1B88": {"1": [39, 34]}, "uni1B8B": {"0": [800, 827], "1": [-23, -26]}, "uni1BA2": {"1": [-585, -587]}, "uni1B82": {"0": [387, 393], "1": [1, -1]}, "uni1B84": {"0": [561, 566], "1": [-22, -24]}, "uni1B80": {"1": [-323, -331]}, "uni1CC5": {"0": [744, 757], "1": [74, 69]}, "uni1BA21BA5": {"1": [-585, -587]}, "uni1BB4": {"0": [535, 554], "1": [45, 40]}, "uni1B90": {"0": [829, 849], "1": [69, 65]}, "uni1B87": {"0": [804, 833], "1": [82, 80]}, "uni1CC7": {"0": [1645, 1670], "1": [-48, -49]}, "uni1BA5": {"1": [-538, -541]}, "uni1BA4": {"1": [-369, -377]}, "uni1CC0": {"0": [1018, 1021], "1": [36, 34]}, "uni1BB6": {"0": [663, 672], "1": [-22, -23]}, "uni1CC3": {"1": [67, 62]}, "hyphen": {"0": [322, 330], "1": [40, 42]}, "uni1B83": {"0": [871, 875], "1": [79, 76]}, "uni1BAC": {"1": [-673, -676]}, "uni1BAE": {"0": [1382, 1427], "1": [74, 73]}, "uni1BA31BA5": {"1": [-622, -627]}, "uni1B8E": {"0": [750, 762], "1": [-30, -35]}, "uni1BBA": {"0": [364, 372], "1": [71, 66]}, "uni1B8A": {"0": [793, 803], "1": [75, 70]}, "uni1BBB": {"0": [712, 736]}, "uni1BB3": {"0": [765, 773], "1": [76, 67]}, "uni1B86": {"1": [79, 76]}, "uni1B85": {"0": [765, 773], "1": [72, 69]}, "uni1B8F": {"0": [815, 858], "1": [-23, -22]}, "uni1BB9": {"0": [745, 757], "1": [72, 68]}, "uni1B98": {"0": [970, 977], "1": [-22, -23]}, "uni1BB1": {"0": [799, 805], "1": [77, 68]}, "uni1BAA": {"0": [264, 268]}, "uni2010": {"1": [40, 42]}, "uni1BA3": {"1": [-581, -584]}, "uni1B9F": {"0": [797, 805], "1": [75, 68]}, "uni1B9A": {"0": [869, 895], "1": [33, 31]}, "uni1BBE": {"0": [1075, 1076], "1": [72, 64]}, "uni1CC4": {"0": [1680, 1748]}, "uni1B9C": {"0": [788, 819], "1": [-20, -22]}, "uni1BB8": {"0": [797, 819], "1": [-10, -16]}, "uni1B96": {"0": [793, 802], "1": [75, 70]}, "uni1BA0": {"0": [770, 807], "1": [16, 14]}, "uni1B81": {"1": [-369, -378]}, "uni1BA81B80": {"1": [-546, -563]}, "uni1B94": {"0": [721, 729], "1": [76, 72]}, "uni1B92": {"0": [861, 879], "1": [33, 30]}, "uni1B9D": {"0": [684, 695], "1": [-22, -23]}, "uni1BA6": {"1": [-14, -13]}, "uni1B89": {"1": [79, 76]}, "uni1B91": {"0": [1077, 1076], "1": [76, 66]}, "uni1CC6": {"0": [1135, 1183]}, "uni1BA1": {"0": [212, 229], "1": [-578, -588]}, "uni1B95": {"0": [793, 803], "1": [75, 72]}, "uni1BB7": {"0": [742, 781], "1": [-79, -81]}, "uni1B9B": {"0": [535, 540], "1": [65, 58]}, "uni1BA9": {"1": [-386, -392]}, "uni1BAF": {"0": [1647, 1676], "1": [75, 68]}, "uni1BBD": {"0": [1336, 1331], "1": [69, 61]}, "uni1B97": {"0": [676, 689], "1": [-22, -23]}, "uni1B9E": {"0": [797, 807], "1": [75, 67]}, "uni1BA7": {"1": [-3, -2]}, "uni1BB5": {"0": [866, 896], "1": [62, 69]}, "uni1CC1": {"1": [67, 62]}, "uni1B93": {"0": [712, 740]}, "uni1BA8": {"1": [-386, -392]}, "uni1BBF": {"0": [727, 728], "1": [112, 108]}, "uni1CC2": {"1": [67, 62]}, "uni1BAD": {"1": [-665, -664]}, "uni1BB2": {"0": [701, 724], "1": [77, 68]}, "uni1B99": {"0": [691, 709], "1": [45, 41]}, "uni1BA11BA5": {"1": [-568, -578]}, "uni1B8D": {"0": [728, 744], "1": [74, 70]}, "uni1BA41B80": {"1": [-478, -498]}, "uni1B8C": {"0": [801, 813], "1": [74, 70]}, "uni1BA91B80": {"1": [-546, -564]}}}, "head": {"xMax": [1730, 1799], "checkSumAdjustment": [3162055929, 3737525598], "modified": [3770173521, 3778556418], "yMax": [970, 977], "fontRevision": [2.003997802734375, 2.0050048828125], "xMin": [-673, -676], "yMin": [-368, -371]}, "HVAR": {"tableTag": ["HVAR", null], "table": {"Version": [65536, null], "VarStore": {"Format": [1, null], "VarRegionList": {"RegionAxisCount": [1, null], "RegionCount": [1, null], "Region": {"0": {"VarRegionAxis": {"0": {"StartCoord": [0.0, null], "PeakCoord": [1.0, null], "EndCoord": [1.0, null]}}}}}, "VarDataCount": [3, null], "VarData": {"0": {"ItemCount": [1, null], "NumShorts": [0, null], "VarRegionCount": [0, null]}, "1": {"ItemCount": [31, null], "NumShorts": [0, null], "VarRegionCount": [1, null], "VarRegionIndex": {"0": [0, null]}, "Item": {"0": {"0": [-33, null]}, "1": {"0": [-4, null]}, "2": {"0": [6, null]}, "3": {"0": [8, null]}, "4": {"0": [20, null]}, "5": {"0": [26, null]}, "6": {"0": [27, null]}, "7": {"0": [32, null]}, "8": {"0": [34, null]}, "9": {"0": [37, null]}, "10": {"0": [38, null]}, "11": {"0": [45, null]}, "12": {"0": [49, null]}, "13": {"0": [50, null]}, "14": {"0": [53, null]}, "15": {"0": [56, null]}, "16": {"0": [63, null]}, "17": {"0": [65, null]}, "18": {"0": [66, null]}, "19": {"0": [68, null]}, "20": {"0": [74, null]}, "21": {"0": [75, null]}, "22": {"0": [77, null]}, "23": {"0": [84, null]}, "24": {"0": [85, null]}, "25": {"0": [100, null]}, "26": {"0": [110, null]}, "27": {"0": [114, null]}, "28": {"0": [117, null]}, "29": {"0": [120, null]}, "30": {"0": [125, null]}}}, "2": {"ItemCount": [17, null], "NumShorts": [1, null], "VarRegionCount": [1, null], "VarRegionIndex": {"0": [0, null]}, "Item": {"0": {"0": [139, null]}, "1": {"0": [146, null]}, "2": {"0": [154, null]}, "3": {"0": [159, null]}, "4": {"0": [163, null]}, "5": {"0": [170, null]}, "6": {"0": [178, null]}, "7": {"0": [183, null]}, "8": {"0": [185, null]}, "9": {"0": [192, null]}, "10": {"0": [200, null]}, "11": {"0": [237, null]}, "12": {"0": [250, null]}, "13": {"0": [274, null]}, "14": {"0": [284, null]}, "15": {"0": [303, null]}, "16": {"0": [434, null]}}}}}, "AdvWidthMap": {"mapping": {".notdef": [0, null], "CR": [0, null], "NULL": [0, null], "hyphen": [65549, null], "uni2010": [0, null], "space": [0, null], "uni00A0": [0, null], "uni1B80": [0, null], "uni1B81": [0, null], "uni1B82": [65546, null], "uni1B83": [65542, null], "uni1B84": [65544, null], "uni1B85": [65549, null], "uni1B86": [0, null], "uni1B87": [131080, null], "uni1B88": [0, null], "uni1B89": [0, null], "uni1B8A": [65553, null], "uni1B8B": [131077, null], "uni1B8C": [65558, null], "uni1B8D": [65561, null], "uni1B8E": [65556, null], "uni1B8F": [131085, null], "uni1B90": [65566, null], "uni1B91": [65537, null], "uni1B92": [65564, null], "uni1B93": [131078, null], "uni1B94": [65548, null], "uni1B95": [65554, null], "uni1B96": [65551, null], "uni1B97": [65560, null], "uni1B98": [65547, null], "uni1B99": [65563, null], "uni1B9A": [131076, null], "uni1B9B": [65543, null], "uni1B9C": [131082, null], "uni1B9D": [65555, null], "uni1B9E": [65552, null], "uni1B9F": [65550, null], "uni1BA0": [131083, null], "uni1BA1": [65562, null], "uni1BA11BA5": [0, null], "uni1BA2": [0, null], "uni1BA21BA5": [0, null], "uni1BA3": [0, null], "uni1BA31BA5": [0, null], "uni1BA4": [0, null], "uni1BA41B80": [0, null], "uni1BA5": [0, null], "uni1BA6": [0, null], "uni1BA7": [0, null], "uni1BA8": [0, null], "uni1BA81B80": [0, null], "uni1BA9": [0, null], "uni1BA91B80": [0, null], "uni1BAA": [65541, null], "uni1BAB": [0, null], "uni1BAC": [0, null], "uni1BAD": [0, null], "uni1BAE": [131086, null], "uni1BAF": [131079, null], "uni1BB0": [0, null], "uni1BB1": [65545, null], "uni1BB2": [131073, null], "uni1BB3": [65549, null], "uni1BB4": [65565, null], "uni1BB5": [131081, null], "uni1BB6": [65551, null], "uni1BB7": [131084, null], "uni1BB8": [131072, null], "uni1BB9": [65557, null], "uni1BBA": [65549, null], "uni1BBB": [131074, null], "uni1BBC": [131083, null], "uni1BBD": [65536, null], "uni1BBE": [65538, null], "uni1BBF": [65539, null], "uni1CC0": [65540, null], "uni1CC1": [0, null], "uni1CC2": [0, null], "uni1CC3": [0, null], "uni1CC4": [131088, null], "uni1CC5": [65559, null], "uni1CC6": [131087, null], "uni1CC7": [131075, null], "uni200B": [0, null], "uni200C": [0, null], "uni200D": [0, null], "uni25CC": [0, null]}}}}, "glyf": {"axisTags": {"0": ["wght", null]}}, "gvar": {"tableTag": ["gvar", null], "version": [1, null], "reserved": [0, null], "axisCount": [1, null], "sharedTupleCount": [1, null], "offsetToSharedTuples": [200, null], "glyphCount": [89, null], "flags": [0, null], "offsetToGlyphVariationData": [202, null]}, "fvar": {"axes": {"wght": {"minValue": [400.0, null], "maxValue": [700.0, null], "defaultValue": [400.0, null], "axisName": ["Weight", null]}}, "instances": {"Regular": {"coordinates": {"wght": [400.0, null]}, "flags": [0, null]}, "Medium": {"coordinates": {"wght": [500.0, null]}, "flags": [0, null]}, "SemiBold": {"coordinates": {"wght": [600.0, null]}, "flags": [0, null]}, "Bold": {"coordinates": {"wght": [700.0, null]}, "flags": [0, null]}}}};</script><div id="difftable"></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+      <div class="box">
+        <div class="box-title">Modified encoded Glyphs</div>
+        <div class="box-text old-Medium" style="font-size: 32pt">
+          
+            <div class="cell">
+              <div class="cell-word" dir="">
+    <div class="tooltip">
+        ᮡ<br>
+        <span class="tooltiptext">
+            name: SUNDANESE CONSONANT SIGN PAMINGKAL<br>
+            unicode: U+1BA1<br>
+            changed pixels: 6.79%
+        </span>
+    </div>
+</div>
+            </div>
+          
+          </div>
+      </div>
+    
+
+    
+    
+    <div class="box">
+      <div class="box-title">Misshapen user strings</div>
+      <div class="box-text old-Medium" style="font-size: 32pt">
+        
+      </div>
+    </div>
+    
+
+    
+
+    </div>
+  
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "old"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	boxTitles = document.getElementsByClassName("box-title")
+	items = document.getElementsByClassName("box-text");
+	  
+	if (POSITION === "old") {
+	  POSITION = "new"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("old", "new")
+	    fontToggle.textContent = "new"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("old", "new")
+	  }
+
+	  } else {
+	  POSITION = "old"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("new", "old")
+	    fontToggle.textContent = "old"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("new", "old")
+	  }
+	}
+	}
+	if (fontToggle !== null) {
+		fontToggle.addEventListener("click", switchFonts);
+	}
+
+// apply optional ot feats
+
+function buildFeatureList() {
+	var features = [
+		'aalt', 'c2sc', 'calt', 'case', 'cpsp', 'dlig', 'dnom',
+		'fina', 'frac', 'init', 'kern', 'liga', 'lnum', 'numr', 'onum',
+		'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'sups',
+		'swsh', 'titl', 'tnum', 'zero', 'ss01', 'ss02',
+		'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08',
+		'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14',
+		'ss15', 'ss16', 'ss17', 'ss18', 'ss19', 'ss20'
+	]
+	
+	var otPanel = document.getElementById("ot-panel")
+	for (i=0; i<features.length; i++) {
+		var feat = features[i]
+		
+		var row = document.createElement("div");
+
+		var item = document.createElement("input");
+		item.type = "checkbox"
+		item.value = feat
+		item.classList.add("ot-checkbox")
+		var label = document.createElement("label")
+		label.textContent = feat
+
+		row.appendChild(item)
+		row.appendChild(label)
+
+		otPanel.appendChild(row)
+	}
+}
+
+buildFeatureList()
+
+
+function enableFeatures() {
+	var checkboxes = document.getElementsByClassName("ot-checkbox")
+	var res = []
+	var disableKerning = false
+	for (i=0; i<checkboxes.length; i++) {
+		if (checkboxes[i].checked === true) {
+			var checkbox = checkboxes[i]
+			res.push('"' + checkbox.value + '"')
+
+			if (checkbox.value === "kern") {
+				disableKerning = true
+			}
+		}
+	}	
+
+	var boxText = document.getElementsByClassName("box-text")
+	var otString = res.join(", ")
+	for (j=0; j<boxText.length; j++) {
+		boxText[j].style.fontFeatureSettings = otString
+		if (disableKerning === true) {
+			boxText[j].style.fontKerning = "none"
+		}
+	}
+}
+
+var otButton = document.getElementById("ot-button")
+otButton.addEventListener("click", function() {
+    otPanel = document.getElementById("ot-panel")
+    if (otPanel.style.display !== "block") {
+        otPanel.style.display = "block"
+    } else {
+        otPanel.style.display = "none"
+    }
+})
+var checkboxes = document.getElementsByClassName("ot-checkbox")
+for (i=0; i<checkboxes.length; i++) {
+	cb = checkboxes[i]
+	cb.addEventListener("click", enableFeatures)
+}	
+    
+	function render(node, toplevel) {
+		var wrapper = $("<div> </div>");
+		if (!node) { return wrapper }
+		if (Array.isArray(node)) {
+			var before = $("<span/>");
+			before.addClass("attr-before");
+			before.html(" " + node[0] + " ");
+			var after = $("<span/>");
+			after.addClass("attr-after");
+			after.append(node[1]);
+			wrapper.append(before);
+			wrapper.append(after);
+			return wrapper
+		}
+		for (const [key, value] of Object.entries(node)) {
+			var display = $("<div/>");
+			display.addClass("node")
+			if (!toplevel && ! key.match(/^\d+$/)) {
+				display.hide()
+			}
+			display.append(key);
+			display.append(render(value, false).children());
+			wrapper.append(display)
+		}
+		return wrapper
+
+	}
+	$(function() {
+		$("#difftable").append(render(fontdiff, true).children())
+		$("#difftable .node").on("click", function(event){ $(this).children().toggle(); event.stopPropagation() })
+	});
+
+function wordBreaks() {
+  words = document.getElementsByClassName("cell-word")
+  res = []
+  prevTop = 0
+  for (i=0; i<words.length; i++) {
+      var word = words[i]
+      currentTop = word.getBoundingClientRect().top
+      if (currentTop > prevTop) {
+          res.push(i)
+      }
+      prevTop = currentTop
+  }
+  return res
+}
+
+async function insertBreaks() {
+  switchFonts()
+  await sleep(1)
+  breaksBefore = wordBreaks()
+  switchFonts()
+  await sleep(1)
+  breaksAfter = wordBreaks()
+
+
+  console.log(breaksBefore.length, breaksAfter.length)
+
+  if (breaksBefore.length >= breaksAfter.length) {
+    breaks = breaksBefore
+  } else {
+    breaks = breaksAfter
+  }
+
+  words = document.getElementsByClassName("cell-word")
+  breaks.forEach(function(i) {
+    if (i != 0) {
+      i = i
+    }
+    word = words[i]
+    spacer = document.createElement("div")
+    spacer.className = "spacer"
+    word.parentNode.insertBefore(spacer, word)
+  })
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  
+insertBreaks()
+
+
+    </script>
+</html>
